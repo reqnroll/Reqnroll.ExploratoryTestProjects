@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Drivers\**" />
+	  <Compile Remove="Support\**" />
+	  <EmbeddedResource Remove="Drivers\**" />
+	  <EmbeddedResource Remove="Support\**" />
+	  <None Remove="Drivers\**" />
+	  <None Remove="Support\**" />
+	  <SpecFlowFeatureFiles Remove="Drivers\**" />
+	  <SpecFlowFeatureFiles Remove="Support\**" />
+	  <SpecFlowObsoleteCodeBehindFiles Remove="Drivers\**" />
+	  <SpecFlowObsoleteCodeBehindFiles Remove="Support\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+		<PackageReference Include="nunit" Version="4.0.1" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+
+		<PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ExternalStepDefs\ExternalStepDefs.csproj" />
+	</ItemGroup>
+
+</Project>

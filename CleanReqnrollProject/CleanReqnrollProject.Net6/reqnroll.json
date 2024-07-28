@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
+
+  "language": {
+    "feature": "hu-HU"
+  },
+  "runtime": {
+    "stopAtFirstError": true
+  },
+  "bindingAssemblies": [
+    {
+      "assembly": "ExternalStepDefs"
+    }
+  ]
+}
