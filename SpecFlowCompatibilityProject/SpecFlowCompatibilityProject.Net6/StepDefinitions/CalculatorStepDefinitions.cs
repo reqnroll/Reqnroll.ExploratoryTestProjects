@@ -36,7 +36,6 @@ public sealed class CalculatorStepDefinitions
     {
         _outputHelper.WriteLine(_scenarioContext.ScenarioInfo.Title);
         _calculator.Enter(number);
-        throw new Exception();
     }
 
     [Given("the second number is (.*)")]
