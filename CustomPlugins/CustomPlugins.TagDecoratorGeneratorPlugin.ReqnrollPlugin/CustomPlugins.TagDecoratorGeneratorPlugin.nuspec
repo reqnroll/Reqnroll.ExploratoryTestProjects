@@ -1,0 +1,24 @@
+﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CustomPlugins.TagDecoratorGeneratorPlugin</id>
+    <version>1.0.0-local</version>
+    <title>CustomPlugins.TagDecoratorGeneratorPlugin</title>
+    <authors>Gaspar Nagy</authors>
+    <owners>Gaspar Nagy</owners>
+    <description>Package to test custom generator plugins</description>
+    <summary>Package to test custom generator plugins</summary>
+    <language>en-US</language>
+    <projectUrl>https://www.reqnroll.net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">BSD-3-Clause</license>
+    <tags>reqnroll plugin</tags>
+    <dependencies>
+      <dependency id="Reqnroll" version="2.1.1-local" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="build\**\*" target="build"/>
+
+    <file src="bin\Debug\netstandard2.0\*" target="build\netstandard2.0"/>
+  </files>
+</package>

@@ -1,0 +1,7 @@
+﻿<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_TagDecoratorGeneratorPluginFramework>netstandard2.0</_TagDecoratorGeneratorPluginFramework>
+
+    <_TagDecoratorGeneratorPluginPath>$(MSBuildThisFileDirectory)$(_TagDecoratorGeneratorPluginFramework)\CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin.dll</_TagDecoratorGeneratorPluginPath>
+  </PropertyGroup>
+</Project>
