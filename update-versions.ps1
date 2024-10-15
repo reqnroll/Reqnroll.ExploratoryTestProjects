@@ -19,7 +19,7 @@ if (-not $version) {
   Exit
 }
 
-$projectFiles = Get-ChildItem -Path $PSScriptRoot -File -Recurse -Filter '*.csproj'
+$projectFiles = Get-ChildItem -Path $PSScriptRoot -File -Recurse -Filter '*.*proj'
 $changedCount = 0
 foreach ($path in $projectFiles){
   $fileContent = Get-Content -LiteralPath $path -Raw
