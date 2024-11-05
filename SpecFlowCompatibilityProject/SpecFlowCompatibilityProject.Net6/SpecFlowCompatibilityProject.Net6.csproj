@@ -10,8 +10,8 @@
 		<PackageReference Include="nunit" Version="4.0.1" />
 		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
 
-		<PackageReference Include="Reqnroll.NUnit" Version="2.1.2-local" />
-		<PackageReference Include="Reqnroll.SpecFlowCompatibility" Version="2.1.2-local" />
+		<PackageReference Include="Reqnroll.NUnit" Version="2.2.0-local" />
+		<PackageReference Include="Reqnroll.SpecFlowCompatibility" Version="2.2.0-local" />
 	</ItemGroup>
 
 	<ItemGroup>
