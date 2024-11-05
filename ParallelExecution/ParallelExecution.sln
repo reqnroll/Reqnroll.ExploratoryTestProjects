@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqnrollCalculator.Specs.MsTestFw", "ReqnrollCalculator.Specs.MsTestFw\ReqnrollCalculator.Specs.MsTestFw.csproj", "{99D7B29C-75DD-4908-8FA1-530FD7C2275D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqnrollCalculator", "ReqnrollCalculator\ReqnrollCalculator.csproj", "{BECCF222-AB31-413A-A7E3-9C25DAE7E0BF}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ReqnrollCalculator.Specs.StepDefinitions", "ReqnrollCalculator.Specs.StepDefinitions\ReqnrollCalculator.Specs.StepDefinitions.shproj", "{4B0E8DA1-CB6E-4975-80EE-E74EF762D80A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqnrollCalculator.Specs.NUnitFw", "ReqnrollCalculator.Specs.NUnitFw\ReqnrollCalculator.Specs.NUnitFw.csproj", "{F69D095D-5C43-448F-AE2A-09AD322BC32C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqnrollCalculator.Specs.XUnitFw", "ReqnrollCalculator.Specs.XUnitFw\ReqnrollCalculator.Specs.XUnitFw.csproj", "{EF9AFB73-A0F2-47F4-B973-531800E8D862}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99D7B29C-75DD-4908-8FA1-530FD7C2275D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D7B29C-75DD-4908-8FA1-530FD7C2275D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D7B29C-75DD-4908-8FA1-530FD7C2275D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D7B29C-75DD-4908-8FA1-530FD7C2275D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECCF222-AB31-413A-A7E3-9C25DAE7E0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECCF222-AB31-413A-A7E3-9C25DAE7E0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECCF222-AB31-413A-A7E3-9C25DAE7E0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECCF222-AB31-413A-A7E3-9C25DAE7E0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69D095D-5C43-448F-AE2A-09AD322BC32C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69D095D-5C43-448F-AE2A-09AD322BC32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69D095D-5C43-448F-AE2A-09AD322BC32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69D095D-5C43-448F-AE2A-09AD322BC32C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9AFB73-A0F2-47F4-B973-531800E8D862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9AFB73-A0F2-47F4-B973-531800E8D862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9AFB73-A0F2-47F4-B973-531800E8D862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9AFB73-A0F2-47F4-B973-531800E8D862}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {204F3869-2413-4BDC-A534-6F5782D593EF}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ReqnrollCalculator.Specs.StepDefinitions\ReqnrollCalculator.Specs.StepDefinitions.projitems*{4b0e8da1-cb6e-4975-80ee-e74ef762d80a}*SharedItemsImports = 13
+		ReqnrollCalculator.Specs.StepDefinitions\ReqnrollCalculator.Specs.StepDefinitions.projitems*{99d7b29c-75dd-4908-8fa1-530fd7c2275d}*SharedItemsImports = 5
+		ReqnrollCalculator.Specs.StepDefinitions\ReqnrollCalculator.Specs.StepDefinitions.projitems*{ef9afb73-a0f2-47f4-b973-531800e8d862}*SharedItemsImports = 5
+		ReqnrollCalculator.Specs.StepDefinitions\ReqnrollCalculator.Specs.StepDefinitions.projitems*{f69d095d-5c43-448f-ae2a-09ad322bc32c}*SharedItemsImports = 5
+	EndGlobalSection
+EndGlobal
