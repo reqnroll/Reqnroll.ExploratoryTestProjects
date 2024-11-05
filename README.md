@@ -8,10 +8,13 @@ The Reqnroll version to be used in the samples is set to the current local versi
 
 The repository contains the following test project sets:
 
-* [ReqnrollCalculator](ReqnrollCalculator): This is a simple generic default go-to project to test Reqnroll.
-* [CleanReqnrollProject](CleanReqnrollProject): Fresh Reqnroll projects (not migrated from SpecFlow) for different target frameworks and test execution frameworks.
-* [SpecFlowCompatibilityProject](SpecFlowCompatibilityProject): Projects migrated from SpecFlow using the `Reqnroll.SpecFlowCompatibility` package.
-* [ReqnrollPlugins](ReqnrollPlugins): Sample projects for every plugin that is maintained by the Reqnroll organization.
 * [BigReqnrollProject](BigReqnrollProject): A project with 5000 scenarios (500 feature files, 10 scenarios each) for testing performance. You can reduce the size by deleting feature files.
+* [CleanReqnrollProject](CleanReqnrollProject): Fresh Reqnroll projects (not migrated from SpecFlow) for different target frameworks and test execution frameworks.
+* [CustomPlugins](CustomPlugins): Reqnroll custom generator plugin sample project.
+* [ParallelExecution](ParallelExecution): Reqnroll projects for all three test execution frameworks for testing parallel execution.
+* [ReqnrollCalculator](ReqnrollCalculator): This is a simple generic default go-to project to test Reqnroll.
+* [ReqnrollPlugins](ReqnrollPlugins): Sample projects for every plugin that is maintained by the Reqnroll organization.
+* [SpecFlowCompatibilityProject](SpecFlowCompatibilityProject): Projects migrated from SpecFlow using the `Reqnroll.SpecFlowCompatibility` package.
 * [SpecFlowProject](SpecFlowProject): SpecFlow project for testing migration or Visual Studio extension SpecFlow project support.
 * [TestFrameworkSamples](TestFrameworkSamples): A sample project for each supported test execution framework (MsTest, NUnit, xUnit), showing the capabilities of the framework itself. Useful for considering support for these capabilities or for testing the test framework behavior with different versions.
+* [VisualBasicProject](VisualBasicProject): Reqnroll projects for all three test execution frameworks using Visual Basic projects and code behind.
