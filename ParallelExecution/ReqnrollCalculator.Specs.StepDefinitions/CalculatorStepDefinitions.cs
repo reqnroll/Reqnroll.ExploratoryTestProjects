@@ -10,7 +10,7 @@ public sealed class CalculatorStepDefinitions
 {
     private static readonly Stopwatch Stopwatch = new();
     private static readonly object LockObj = new();
-    private static readonly Random Rnd = new();
+    private static readonly Random Rnd = new(42);
     private static readonly string LogFileName = $"parallel_log_{typeof(CalculatorStepDefinitions).Assembly.GetName().Name}.txt";
 
     private static void AppendLogMessage(string message, ITestRunner? testRunner = null, bool newLineAfter = false)
