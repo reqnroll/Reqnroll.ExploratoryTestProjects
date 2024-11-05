@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqnrollPlugins.OldBoDi", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqnrollPlugins.Verify", "ReqnrollPlugins.Verify\ReqnrollPlugins.Verify.csproj", "{7683F7AD-5D0C-47A0-A890-B922E5FA438A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReqnrollPlugins.xRetry", "ReqnrollPlugins.xRetry\ReqnrollPlugins.xRetry.csproj", "{DC7F1E57-11B7-431C-9604-CDB71CE11370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7683F7AD-5D0C-47A0-A890-B922E5FA438A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7683F7AD-5D0C-47A0-A890-B922E5FA438A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7683F7AD-5D0C-47A0-A890-B922E5FA438A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7F1E57-11B7-431C-9604-CDB71CE11370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7F1E57-11B7-431C-9604-CDB71CE11370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7F1E57-11B7-431C-9604-CDB71CE11370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7F1E57-11B7-431C-9604-CDB71CE11370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
