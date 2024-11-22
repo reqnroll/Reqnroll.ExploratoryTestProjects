@@ -10,5 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CalculatorStepDefinitions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LoggingHooks.cs" />
   </ItemGroup>
 </Project>
