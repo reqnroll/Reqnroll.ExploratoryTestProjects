@@ -1,0 +1,8 @@
+{
+    "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
+
+    "NRetrySettings": {
+        "maxRetries": 3,
+        "applyGlobally": true
+    }
+}
