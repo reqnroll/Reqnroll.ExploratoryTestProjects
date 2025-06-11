@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldProjectFileFormat.MsTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldProjectFileFormat.NUnitFw", "OldProjectFileFormat.NUnitFw\OldProjectFileFormat.NUnitFw.csproj", "{5A14CA78-952D-4E12-AA0A-7C5847274CBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldProjectFileFormat.Empty", "OldProjectFileFormat.Empty\OldProjectFileFormat.Empty.csproj", "{52461D68-48B1-426A-A098-7C32EA47BE15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5A14CA78-952D-4E12-AA0A-7C5847274CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A14CA78-952D-4E12-AA0A-7C5847274CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A14CA78-952D-4E12-AA0A-7C5847274CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52461D68-48B1-426A-A098-7C32EA47BE15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52461D68-48B1-426A-A098-7C32EA47BE15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52461D68-48B1-426A-A098-7C32EA47BE15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52461D68-48B1-426A-A098-7C32EA47BE15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
