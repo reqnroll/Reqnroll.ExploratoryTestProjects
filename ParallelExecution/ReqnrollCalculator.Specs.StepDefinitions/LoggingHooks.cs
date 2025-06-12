@@ -16,7 +16,7 @@ public class LoggingHooks
         var timestamp = Stopwatch.Elapsed;
         lock (LockObj)
         {
-            var line = $"{timestamp:c} {testRunner?.TestWorkerId ?? "-"}: {message}";
+            var line = $"{timestamp:c} {testRunner?.TestWorkerId ?? "-"}/#{Thread.CurrentThread.ManagedThreadId:D2}: {message}";
             File.AppendAllLines(LogFileName, newLineAfter ? [line, ""] : [line]);
         }
     }
