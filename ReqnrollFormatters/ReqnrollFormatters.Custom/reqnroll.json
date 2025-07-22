@@ -1,0 +1,9 @@
+{
+  "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
+
+  "formatters": {
+    "custom": {
+      "outputFilePath": "reqnroll_report.txt"
+    }
+  }
+}
