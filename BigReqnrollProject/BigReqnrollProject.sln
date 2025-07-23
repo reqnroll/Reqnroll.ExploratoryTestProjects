@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigReqnrollProject", "BigReqnrollProject\BigReqnrollProject.csproj", "{FF36A89E-7F92-42A5-BAAC-9D14D4841A10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvgReqnrollProject", "AvgReqnrollProject\AvgReqnrollProject.csproj", "{624B8B21-1FF0-2B06-F05A-E54F860B789E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FF36A89E-7F92-42A5-BAAC-9D14D4841A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF36A89E-7F92-42A5-BAAC-9D14D4841A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF36A89E-7F92-42A5-BAAC-9D14D4841A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{624B8B21-1FF0-2B06-F05A-E54F860B789E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624B8B21-1FF0-2B06-F05A-E54F860B789E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624B8B21-1FF0-2B06-F05A-E54F860B789E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624B8B21-1FF0-2B06-F05A-E54F860B789E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
