@@ -15,6 +15,7 @@ Scenario: Passing scenario
 Scenario: Failing scenario
 	When I do something
 	Then the scenario fails
+	And nothing else matters
 
 Scenario Outline: Outline with multiple examples
 	Given the first parameter is "<param>"
