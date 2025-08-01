@@ -5,7 +5,7 @@
     "html": {
       "outputFilePath": "reqnroll_report.html"
     },
-    "messages": {
+    "message": {
       "outputFilePath": "reqnroll_report.ndjson"
     }
   }
