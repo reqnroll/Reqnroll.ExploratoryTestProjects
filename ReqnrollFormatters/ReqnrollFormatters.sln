@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReqnrollFormatters.Standard
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReqnrollFormatters.Custom", "ReqnrollFormatters.Custom\ReqnrollFormatters.Custom.csproj", "{FE6BE948-0314-11F3-BDA9-AE209CB7EC28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReqnrollFormatters.CustomizedHtml", "ReqnrollFormatters.CustomizedHtml\ReqnrollFormatters.CustomizedHtml.csproj", "{FA6A9313-663B-8AD5-B0C5-B6CD1BDBF8E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FE6BE948-0314-11F3-BDA9-AE209CB7EC28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE6BE948-0314-11F3-BDA9-AE209CB7EC28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE6BE948-0314-11F3-BDA9-AE209CB7EC28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA6A9313-663B-8AD5-B0C5-B6CD1BDBF8E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6A9313-663B-8AD5-B0C5-B6CD1BDBF8E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6A9313-663B-8AD5-B0C5-B6CD1BDBF8E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6A9313-663B-8AD5-B0C5-B6CD1BDBF8E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
