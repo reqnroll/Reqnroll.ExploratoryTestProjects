@@ -13,7 +13,14 @@ public class CustomizedHtmlFormatterPlugin : IRuntimePlugin
     {
         runtimePluginEvents.RegisterGlobalDependencies += (_, args) =>
         {
-            args.ObjectContainer.RegisterTypeAs<CustomizedHtmlFormatter, ICucumberMessageFormatter>("customizedHtml");
+            // Register the custom themed HTML formatter
+            args.ObjectContainer.RegisterTypeAs<CustomThemedHtmlFormatter, ICucumberMessageFormatter>("customThemedHtml");
+            
+            // Register the custom styled HTML formatter
+            args.ObjectContainer.RegisterTypeAs<CustomStyledHtmlFormatter, ICucumberMessageFormatter>("customStyledHtml");
+            
+            // Register the custom rendering HTML formatter
+            args.ObjectContainer.RegisterTypeAs<CustomRenderingHtmlFormatter, ICucumberMessageFormatter>("customRenderingHtml");
         };
     }
 }

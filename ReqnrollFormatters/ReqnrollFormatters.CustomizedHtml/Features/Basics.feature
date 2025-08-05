@@ -27,6 +27,7 @@ Examples:
 	| foo bar | 12          | passes |
 	| baz     | 23          | fails  |
 
+@customized
 Scenario: Scenario with a doc-string
 	When I do something
 	Then the scenario passes with a doc-string
