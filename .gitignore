@@ -330,3 +330,7 @@ ASALocalRun/
 .mfractor/
 *.feature.cs
 *.feature.vb
+
+# Reqnroll Formatters
+/ReqnrollFormatters/ReqnrollFormatters.CustomizedHtml/CustomTemplate/dist/
+/ReqnrollFormatters/ReqnrollFormatters.CustomizedHtml/Resources/

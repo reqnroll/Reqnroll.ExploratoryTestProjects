@@ -13,13 +13,31 @@
     <PackageReference Include="Reqnroll.MsTest" Version="3.0.0-local" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.9.3" />
     <PackageReference Include="MSTest.TestFramework" Version="3.9.3" />
-    <PackageReference Include="Cucumber.HtmlFormatter" Version="21.13.0-local" />
+    <PackageReference Include="Cucumber.HtmlFormatter" Version="21.13.0-local9" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="sample-image.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <!-- Include only the required resource files directly from their source locations -->
+  <ItemGroup>
+    <EmbeddedResource Include="CustomTemplate\src\index.mustache.html">
+      <LogicalName>ReqnrollFormatters.CustomizedHtml.Resources.index.mustache.html</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomTemplate\dist\main.css">
+      <LogicalName>ReqnrollFormatters.CustomizedHtml.Resources.main.css</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomTemplate\dist\main.js">
+      <LogicalName>ReqnrollFormatters.CustomizedHtml.Resources.main.js</LogicalName>
+    </EmbeddedResource>
+
+    <!-- Some of the node.js modules used by CustomTemplate contain feature files,
+         those have to be removed from Reqnroll processing. -->
+    <ReqnrollFeatureFiles Remove="CustomTemplate\**\*.feature" />
+    <None Include="CustomTemplate\**\*.feature" />
   </ItemGroup>
 
 </Project>

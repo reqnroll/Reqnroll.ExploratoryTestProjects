@@ -8,7 +8,7 @@ The HTML report is based on the [Cucumber React Components](https://github.com/c
 
 ### 1. Theming
 
-Customize the overall look and feel of the report by defining a theme. This is demonstrated in the `ThemedHtmlFormatter` class.
+Customize the overall look and feel of the report by defining a theme. This is demonstrated in the `CustomThemedHtmlFormatter` class.
 
 - **Example**: Dark theme with custom colors for different elements
 - **Documentation**: [Cucumber React Components - Theming](https://github.com/cucumber/react-components?tab=readme-ov-file#theming)
@@ -27,6 +27,13 @@ Completely customize how certain elements are rendered in the report. This is de
 - **Example**: Custom rendering of doc strings using a textarea element
 - **Documentation**: [Cucumber React Components - Custom Rendering](https://github.com/cucumber/react-components?tab=readme-ov-file#custom-rendering)
 
+### 4. Complete Redesign with Custom Templates
+
+For maximum flexibility, you can completely redesign the HTML report by using custom templates and resources. This is demonstrated in the `CustomTemplateHtmlFormatter` class.
+
+- **Example**: Custom HTML, CSS, and JavaScript built with React and Webpack
+- **Requirements**: Node.js and npm for building the resources
+
 ## How to Use
 
 1. Add the appropriate formatter to your reqnroll.json file:
@@ -34,8 +41,8 @@ Completely customize how certain elements are rendered in the report. This is de
 ```json
 {
   "formatters": {
-    "themedHtml": {
-      "outputFilePath": "themed_report.html"
+    "customThemedHtml": {
+      "outputFilePath": "custom_themed_report.html"
     }
   }
 }
@@ -43,7 +50,7 @@ Completely customize how certain elements are rendered in the report. This is de
 
 2. Run your tests and check the generated HTML report. For the custom styles and rendering, check the scenario tagged with `@customized`.
 
-> **Note**: Although this sample demonstrates all three customization approaches with separate formatters generating multiple reports, in a real-world scenario you would typically choose just one approach and configure a single formatter.
+> **Note**: Although this sample demonstrates all customization approaches with separate formatters generating multiple reports, in a real-world scenario you would typically choose just one approach and configure a single formatter.
 
 > **Disclaimer**: The customization interface for the Reqnroll HTML formatter is currently in preview status. In future releases, we plan to provide more convenient ways to customize the HTML report that will not require implementing custom resource providers.
 
@@ -54,8 +61,28 @@ Each formatter uses a custom `IResourceProvider` to modify the HTML, CSS, and Ja
 1. `CustomThemedHtmlFormatter`: Adds a CSS theme and modifies the HTML to apply the theme class
 2. `CustomStyledHtmlFormatter`: Adds custom CSS styles and modifies the JavaScript to apply the styles
 3. `CustomRenderingHtmlFormatter`: Modifies the JavaScript to completely change the rendering of certain elements
+4. `CustomTemplateHtmlFormatter`: Uses completely custom resources built from templates
+
+### Building the Custom Template Resources
+
+To build the custom resources for the `CustomTemplateHtmlFormatter`, follow these steps:
+
+1. Ensure you have Node.js and npm installed
+2. Run the PowerShell script in the project root:
+
+```powershell
+.\Build-TemplateFormatter.ps1
+```
+
+This will:
+- Install the necessary npm packages
+- Build the React application using Webpack
+- The required files are embedded directly from their source locations:
+  - `index.mustache.html` from the `CustomTemplate/src` directory
+  - `main.css` and `main.js` from the `CustomTemplate/dist` directory
 
 ## References
 
 - [Cucumber React Components](https://github.com/cucumber/react-components)
+- [Cucumber HTML Formatter](https://github.com/cucumber/html-formatter)
 - [Reqnroll Documentation](https://docs.reqnroll.net/)

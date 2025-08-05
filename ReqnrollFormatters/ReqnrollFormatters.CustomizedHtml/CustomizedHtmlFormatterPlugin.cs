@@ -21,6 +21,9 @@ public class CustomizedHtmlFormatterPlugin : IRuntimePlugin
             
             // Register the custom rendering HTML formatter
             args.ObjectContainer.RegisterTypeAs<CustomRenderingHtmlFormatter, ICucumberMessageFormatter>("customRenderingHtml");
+            
+            // Register the custom template HTML formatter
+            args.ObjectContainer.RegisterTypeAs<CustomTemplateHtmlFormatter, ICucumberMessageFormatter>("customTemplateHtml");
         };
     }
 }

@@ -10,6 +10,9 @@
     },
     "customRenderingHtml": {
       "outputFilePath": "custom_rendering_report.html"
+    },
+    "customTemplateHtml": {
+      "outputFilePath": "custom_template_report.html"
     }
   }
 }
