@@ -70,7 +70,7 @@ public sealed class ProjectStepDefinitions(IReqnrollOutputHelper outputHelper, S
     [Given("the scenario is marked inconclusive")]
     public void GivenTheScenarioIsMarkedInconclusive()
     {
-        scenarioContext.ScenarioContainer.Resolve<IUnitTestRuntimeProvider>().TestIgnore("This is inconclusive!");
+        scenarioContext.ScenarioContainer.Resolve<IUnitTestRuntimeProvider>().TestInconclusive("This is inconclusive!");
     }
 
     [Given("the scenario is pending")]
