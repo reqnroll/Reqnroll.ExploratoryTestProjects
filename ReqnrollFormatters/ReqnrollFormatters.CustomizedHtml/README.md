@@ -78,7 +78,6 @@ This will:
 - Install the necessary npm packages
 - Build the React application using Webpack
 - The required files are embedded directly from their source locations:
-  - `index.mustache.html` from the `CustomTemplate/src` directory
   - `main.css` and `main.js` from the `CustomTemplate/dist` directory
 
 ## References

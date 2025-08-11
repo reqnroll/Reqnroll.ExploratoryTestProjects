@@ -15,41 +15,25 @@ namespace ReqnrollFormatters.CustomizedHtml;
 public class CustomTemplateHtmlFormatter(IFormattersConfigurationProvider configurationProvider, IFormatterLog logger, IFileSystem fileSystem)
     : HtmlFormatter(configurationProvider, logger, fileSystem, "customTemplateHtml")
 {
-    private class CustomTemplateResourceProvider : IResourceProvider
+    protected override HtmlReportSettings GetHtmlReportSettings()
     {
-        public string GetTemplateResource()
-        {
-            return LoadEmbeddedResource("index.mustache.html");
-        }
-
-        public string GetCssResource()
-        {
-            return LoadEmbeddedResource("main.css");
-        }
-
-        public string GetJavaScriptResource()
-        {
-            return LoadEmbeddedResource("main.js");
-        }
-
-        private string LoadEmbeddedResource(string resourceName)
-        {
-            // Load the resource from the embedded resources in this assembly
-            var assembly = Assembly.GetExecutingAssembly();
-            var fullResourceName = $"{assembly.GetName().Name}.Resources.{resourceName}";
-
-            using var stream = assembly.GetManifestResourceStream(fullResourceName);
-            if (stream == null)
-                throw new InvalidOperationException($"Could not find embedded resource '{fullResourceName}'");
-
-            using var reader = new StreamReader(stream);
-            return reader.ReadToEnd();
-        }
+        var settings = base.GetHtmlReportSettings();
+        settings.JavascriptResourceLoader = () => LoadEmbeddedResource("main.js");
+        settings.CssResourceLoader = () => LoadEmbeddedResource("main.css");
+        return settings;
     }
 
-    protected override MessagesToHtmlWriter CreateMessagesToHtmlWriter(Stream stream, Func<StreamWriter, Envelope, Task> asyncStreamSerializer)
+    private string LoadEmbeddedResource(string resourceName)
     {
-        var customResourceProvider = new CustomTemplateResourceProvider();
-        return new MessagesToHtmlWriter(stream, asyncStreamSerializer, customResourceProvider);
+        // Load the resource from the embedded resources in this assembly
+        var assembly = Assembly.GetExecutingAssembly();
+        var fullResourceName = $"{assembly.GetName().Name}.Resources.{resourceName}";
+
+        using var stream = assembly.GetManifestResourceStream(fullResourceName);
+        if (stream == null)
+            throw new InvalidOperationException($"Could not find embedded resource '{fullResourceName}'");
+
+        using var reader = new StreamReader(stream);
+        return reader.ReadToEnd();
     }
 }

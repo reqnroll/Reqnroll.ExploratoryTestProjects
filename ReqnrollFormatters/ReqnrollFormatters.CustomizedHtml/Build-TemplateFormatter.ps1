@@ -14,18 +14,12 @@ Write-Host "CustomTemplate path: $customTemplatePath"
 Push-Location $customTemplatePath
 
 try {
-    # Install dependencies if node_modules doesn't exist
-    if (-not (Test-Path "node_modules")) {
-        Write-Host "Installing npm dependencies..."
-        npm install --no-fund --no-audit --legacy-peer-deps
+    Write-Host "Installing npm dependencies..."
+    npm install --no-fund --no-audit --legacy-peer-deps
         
-        if ($LASTEXITCODE -ne 0) {
-            Write-Warning "npm install failed with exit code $LASTEXITCODE"
-            # Continue anyway - we have fallback resources
-        }
-    }
-    else {
-        Write-Host "node_modules directory already exists, skipping npm install"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Warning "npm install failed with exit code $LASTEXITCODE"
+        # Continue anyway - we have fallback resources
     }
 
     # Build the project

@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <NoWarn>NU1605</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +12,6 @@
     <PackageReference Include="Reqnroll.MsTest" Version="3.0.0-local" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.9.3" />
     <PackageReference Include="MSTest.TestFramework" Version="3.9.3" />
-    <PackageReference Include="Cucumber.HtmlFormatter" Version="21.13.0-local9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,9 +22,6 @@
 
   <!-- Include only the required resource files directly from their source locations -->
   <ItemGroup>
-    <EmbeddedResource Include="CustomTemplate\src\index.mustache.html">
-      <LogicalName>ReqnrollFormatters.CustomizedHtml.Resources.index.mustache.html</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomTemplate\dist\main.css">
       <LogicalName>ReqnrollFormatters.CustomizedHtml.Resources.main.css</LogicalName>
     </EmbeddedResource>
