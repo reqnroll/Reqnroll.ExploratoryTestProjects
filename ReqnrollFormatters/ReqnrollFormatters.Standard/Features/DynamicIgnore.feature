@@ -29,3 +29,11 @@ Scenario: Dynamically marked inconclusive
 Scenario: Pending scenario
 	Given the scenario is pending
 	When I do something
+
+Scenario: Not implemented scenario
+	Given the scenario is not implemented
+	When I do something
+
+Scenario: Undefined scenario
+	Given the scenario step is undefined
+	When I do something

@@ -78,4 +78,10 @@ public sealed class ProjectStepDefinitions(IReqnrollOutputHelper outputHelper, S
     {
         throw new PendingStepException();
     }
+
+    [Given("the scenario is not implemented")]
+    public void GivenTheScenarioIsNotImplemented()
+    {
+        throw new NotImplementedException();
+    }
 }
