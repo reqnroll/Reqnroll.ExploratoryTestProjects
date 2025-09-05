@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
-    <PackageReference Include="Reqnroll.MsTest" Version="3.0.1-local" />
+    <PackageReference Include="Reqnroll.MsTest" Version="3.0.2-local" />
     <PackageReference Include="BoDi" Version="1.5.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.3.1" />
     <PackageReference Include="MSTest.TestFramework" Version="3.3.1" />
