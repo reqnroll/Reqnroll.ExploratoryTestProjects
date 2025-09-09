@@ -14,7 +14,22 @@ public class EnableFormatterLogPlugin : IRuntimePlugin
     {
         runtimePluginEvents.CustomizeGlobalDependencies += (_, args) =>
         {
-            args.ObjectContainer.RegisterTypeAs<TraceListenerFormatterLog, IFormatterLog>();
+            args.ObjectContainer.RegisterTypeAs<FileFormatterLog, IFormatterLog>();
         };
+    }
+
+    public class FileFormatterLog : IFormatterLog
+    {
+        private readonly List<string> _entries = new();
+
+        public void WriteMessage(string message)
+        {
+            _entries.Add($"{DateTime.Now:HH:mm:ss.fff}: {message}");
+        }
+
+        public void DumpMessages()
+        {
+            File.WriteAllLines("formatter_log.txt", _entries);
+        }
     }
 }
