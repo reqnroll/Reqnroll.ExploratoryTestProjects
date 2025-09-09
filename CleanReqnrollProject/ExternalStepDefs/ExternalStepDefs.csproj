@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reqnroll" Version="3.0.2-local" />
+    <PackageReference Include="Reqnroll" Version="3.0.3-local" />
   </ItemGroup>
 
 </Project>
