@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanReqnrollProject.Net9",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanReqnrollProject.Net8.TUnitFw", "CleanReqnrollProject.Net8.TUnitFw\CleanReqnrollProject.Net8.TUnitFw.csproj", "{1D77726F-4A43-357D-19D4-55512794971C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanReqnrollProject.Net8.Xunit3Fw", "CleanReqnrollProject.Net8.Xunit3Fw\CleanReqnrollProject.Net8.Xunit3Fw.csproj", "{A6A008C7-EA7E-972A-0184-2D2DF42BDA5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{1D77726F-4A43-357D-19D4-55512794971C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D77726F-4A43-357D-19D4-55512794971C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D77726F-4A43-357D-19D4-55512794971C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A008C7-EA7E-972A-0184-2D2DF42BDA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A008C7-EA7E-972A-0184-2D2DF42BDA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A008C7-EA7E-972A-0184-2D2DF42BDA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A008C7-EA7E-972A-0184-2D2DF42BDA5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
