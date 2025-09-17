@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reqnroll" Version="3.0.3-local" />
-    <PackageReference Include="Reqnroll.SpecFlowCompatibility" Version="3.0.3-local" />    
+    <PackageReference Include="Reqnroll" Version="3.1.0-local" />
+    <PackageReference Include="Reqnroll.SpecFlowCompatibility" Version="3.1.0-local" />    
   </ItemGroup>
 
 </Project>
