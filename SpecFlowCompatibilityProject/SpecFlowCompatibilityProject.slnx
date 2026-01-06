@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ExternalStepDefs/ExternalStepDefs.csproj" />
+  <Project Path="SpecFlowCompatibilityProject.Net10/SpecFlowCompatibilityProject.Net10.csproj" />
+  <Project Path="SpecFlowCompatibilityProject.Net472/SpecFlowCompatibilityProject.Net472.csproj" />
+  <Project Path="SpecFlowCompatibilityProject.Net8/SpecFlowCompatibilityProject.Net8.csproj" />
+</Solution>
