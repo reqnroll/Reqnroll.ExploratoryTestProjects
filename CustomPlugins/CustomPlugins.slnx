@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="CalculatorApp/CalculatorApp.csproj" />
+  <Project Path="CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin/CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin.csproj" />
+  <Project Path="CustomPlugins.TagDecoratorGeneratorPlugin.Test/CustomPlugins.TagDecoratorGeneratorPlugin.Test.csproj">
+    <BuildDependency Project="CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin/CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin.csproj" />
+  </Project>
+</Solution>

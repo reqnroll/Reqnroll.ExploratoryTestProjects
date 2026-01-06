@@ -31,12 +31,16 @@ public sealed class CalculatorStepDefinitions
     public void WhenTheTwoNumbersAreAdded()
     {
         _calculator.Add();
+        // test if the plugin worked
+        Assert.AreEqual(ApartmentState.MTA, Thread.CurrentThread.GetApartmentState());
     }
 
     [When("the two numbers are multiplied")]
     public void WhenTheTwoNumbersAreMultiplied()
     {
         _calculator.Multiply();
+        // test if the plugin worked
+        Assert.AreEqual(ApartmentState.STA, Thread.CurrentThread.GetApartmentState());
     }
 
     [Then("the result should be {int}")]
