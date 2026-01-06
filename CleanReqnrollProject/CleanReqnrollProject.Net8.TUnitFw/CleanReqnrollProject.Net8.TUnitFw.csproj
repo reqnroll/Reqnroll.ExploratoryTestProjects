@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reqnroll.TUnit" Version="3.3.0-local" />
+    <PackageReference Include="Reqnroll.TUnit" Version="3.3.1-local" />
     <PackageReference Include="TUnit" Version="0.73.19" />
   </ItemGroup>
 

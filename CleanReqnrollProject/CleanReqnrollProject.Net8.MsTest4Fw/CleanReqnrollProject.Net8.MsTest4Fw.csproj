@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reqnroll.MsTest" Version="3.3.0-local" />
+    <PackageReference Include="Reqnroll.MsTest" Version="3.3.1-local" />
     <PackageReference Include="MSTest" Version="4.0.1" />
   </ItemGroup>
 
