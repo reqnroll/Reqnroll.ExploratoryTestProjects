@@ -334,3 +334,7 @@ ASALocalRun/
 # Reqnroll Formatters
 /ReqnrollFormatters/ReqnrollFormatters.CustomizedHtml/CustomTemplate/dist/
 /ReqnrollFormatters/ReqnrollFormatters.CustomizedHtml/Resources/
+
+# NCrunch settings
+*.ncrunchsolution
+*.ncrunchproject
