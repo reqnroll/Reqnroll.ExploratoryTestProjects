@@ -22,11 +22,11 @@ if (-not $version) {
 $projectFiles = Get-ChildItem -Path $PSScriptRoot -File -Recurse -Filter '*.*proj'
 $changedCount = 0
 foreach ($path in $projectFiles){
-  $fileContent = Get-Content -LiteralPath $path -Raw
+  $fileContent = Get-Content -LiteralPath $path.FullName -Raw
   $newFileContent = Set-Versions $fileContent $version
   if ($newFileContent -ne $fileContent){
     Write-Host "Updating $($path.Name)"
-    Set-Content -Path $path -Value $newFileContent -NoNewline -Encoding utf8
+    Set-Content -Path $path.FullName -Value $newFileContent -NoNewline -Encoding utf8
     $changedCount++
   }
 }
