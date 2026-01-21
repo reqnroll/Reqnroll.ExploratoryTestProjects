@@ -17,6 +17,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CalculatorApp\CalculatorApp.csproj" />
+    <ProjectReference Include="..\CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin\CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>

@@ -7,6 +7,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NuspecFile>$(MSBuildThisFileDirectory)CustomPlugins.TagDecoratorGeneratorPlugin.nuspec</NuspecFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)../PluginPackages</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
