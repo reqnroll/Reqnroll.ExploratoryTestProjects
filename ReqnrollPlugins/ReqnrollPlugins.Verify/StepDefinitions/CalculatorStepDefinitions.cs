@@ -4,14 +4,9 @@ using ReqnrollPlugins.Verify.Support;
 namespace ReqnrollPlugins.Verify.StepDefinitions;
 
 [Binding]
-public sealed class CalculatorStepDefinitions
+public sealed class CalculatorStepDefinitions(VerifySettings verifySettings)
 {
-    private readonly ICalculator _calculator;
-
-    public CalculatorStepDefinitions()
-    {
-        _calculator = new Calculator(new TestCalculatorConfiguration());
-    }
+    private readonly ICalculator _calculator = new Calculator(new TestCalculatorConfiguration());
 
     [Given("the first number is {int}")]
     public void GivenTheFirstNumberIs(int number)
@@ -42,6 +37,6 @@ public sealed class CalculatorStepDefinitions
     public async Task ThenTheResultShouldBe(int result)
     {
         Assert.Equal(result, _calculator.GetResult());
-        await Verifier.Verify(_calculator.GetResult());
+        await Verifier.Verify(_calculator.GetResult(), verifySettings);
     }
 }
