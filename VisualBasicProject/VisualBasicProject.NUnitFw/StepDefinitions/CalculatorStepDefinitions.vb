@@ -20,7 +20,7 @@ Namespace StepDefinitions
 
         <Reqnroll.Then("the result should be {int}")>
         Public Sub ThenTheResultShouldBe(result As Integer)
-            Assert.AreEqual(result, result)
+            Assert.That(result, result)
         End Sub
     
     End Class
