@@ -9,7 +9,7 @@ public class AttachmentTest(TestContext testContext)
     public TestContext TestContext { get; set; } = testContext;
 
     [TestMethod]
-    public void TestWithTxtAttachment()
+    public void TestWithAnAttachment()
     {
         TestContext.AddResultFile(Path.Combine("..", "..", "..", "..", "sample-txt-attachment.txt"));
     }
@@ -31,9 +31,9 @@ public class AttachmentTest(TestContext testContext)
     }
 
     [TestMethod]
-    public void TestWithPngAttachment()
+    public void TestWithMultipleAttachments()
     {
+        TestContext.AddResultFile(Path.Combine("..", "..", "..", "..", "sample-txt-attachment.txt"));
         TestContext.AddResultFile(Path.Combine("..", "..", "..", "..", "sample-png-attachment.png"));
     }
-
 }

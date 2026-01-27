@@ -7,7 +7,7 @@ public class AttachmentTest
 {
 
     [Test]
-    public void TestWithTxtAttachment()
+    public void TestWithAnAttachment()
     {
         TestContext.AddTestAttachment(Path.Combine("..", "..", "..", "..", "sample-txt-attachment.txt"));
     }
@@ -29,9 +29,9 @@ public class AttachmentTest
     }
 
     [Test]
-    public void TestWithPngAttachment()
+    public void TestWithMultipleAttachments()
     {
+        TestContext.AddTestAttachment(Path.Combine("..", "..", "..", "..", "sample-txt-attachment.txt"));
         TestContext.AddTestAttachment(Path.Combine("..", "..", "..", "..", "sample-png-attachment.png"));
     }
-
 }
