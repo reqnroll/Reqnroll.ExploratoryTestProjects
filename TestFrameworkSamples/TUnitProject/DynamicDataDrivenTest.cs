@@ -25,7 +25,7 @@ public class DynamicDataDrivenTest
 
     public class DynamicDataDriven2DataGenerator : DataSourceGeneratorAttribute<string, int>
     {
-        public override IEnumerable<Func<(string, int)>> GenerateDataSources(DataGeneratorMetadata dataGeneratorMetadata)
+        protected override IEnumerable<Func<(string, int)>> GenerateDataSources(DataGeneratorMetadata dataGeneratorMetadata)
         {
             yield return () => ("foo", 42);
             yield return () => ("bar", 43);

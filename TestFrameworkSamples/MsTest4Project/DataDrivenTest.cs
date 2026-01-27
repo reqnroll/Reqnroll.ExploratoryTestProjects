@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.ComponentModel;
 
-namespace MsTestProject;
+namespace MsTest4Project;
 
 [TestClass]
 public class DataDrivenTest
@@ -14,7 +15,8 @@ public class DataDrivenTest
 
     }
 
-    [TestMethod("Data Driven 2")]
+    [TestMethod]
+    [DisplayName("Data Driven 2")]
     [DataRow("foo", 42)]
     [DataRow("bar", 43)]
     [DataRow("baz", 44)]
@@ -23,7 +25,8 @@ public class DataDrivenTest
 
     }
 
-    [TestMethod("Data Driven 3")]
+    [TestMethod]
+    [DisplayName("Data Driven 3")]
     [DataRow("foo", 42, DisplayName = "foo with 42")]
     [DataRow("bar", 43, DisplayName = "bar with 43")]
     [DataRow("baz", 44, DisplayName = "baz with 44")]

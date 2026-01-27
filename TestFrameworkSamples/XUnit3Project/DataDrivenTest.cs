@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace XUnitProject;
+namespace XUnit3Project;
 
 public class DataDrivenTest
 {

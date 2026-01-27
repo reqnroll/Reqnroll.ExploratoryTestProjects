@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using NUnit.Framework;
+using Xunit;
 
-namespace NUnitProject;
+namespace XUnit3Project;
 
-[TestFixture]
 public class DynamicDataDrivenTest
 {
     public static IEnumerable<object[]> DynamicDataDriven1_DataProvider()
@@ -16,11 +15,12 @@ public class DynamicDataDrivenTest
         ];
     }
 
-    [Test]
-    [TestCaseSource(nameof(DynamicDataDriven1_DataProvider))]
+    [Theory]
+    [MemberData(nameof(DynamicDataDriven1_DataProvider))]
     public void DynamicDataDriven1(string strParam, int intParam)
     {
-
+        _ = strParam; // to avoid unused parameter warning
+        _ = intParam; // to avoid unused parameter warning
     }
 
     public static IEnumerable<object[]> DynamicDataDriven2_DataProvider(string dataProviderParam)
@@ -33,10 +33,11 @@ public class DynamicDataDrivenTest
         ];
     }
 
-    [Test]
-    [TestCaseSource(nameof(DynamicDataDriven2_DataProvider), methodParams: ["provider param 1"])]
+    [Theory]
+    [MemberData(nameof(DynamicDataDriven2_DataProvider), "provider param 1")]
     public void DynamicDataDriven2(string strParam, int intParam)
     {
-
+        _ = strParam; // to avoid unused parameter warning
+        _ = intParam; // to avoid unused parameter warning
     }
 }

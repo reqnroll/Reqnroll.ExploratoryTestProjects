@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace MsTestProject;
+namespace MsTest4Project;
 
 [TestClass]
 public class DynamicDataDrivenTest
@@ -41,6 +41,7 @@ public class DynamicDataDrivenTest
         return $"{displayName} ({string.Join(",", values.SkipLast(1))})";
     }
 
+    // Special "hack" to get DisplayName for DynamicData tests
     [TestMethod]
     [DynamicData(
         nameof(DynamicDataDriven2_DataProvider),
