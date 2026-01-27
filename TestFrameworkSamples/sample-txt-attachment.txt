@@ -1,0 +1,3 @@
+Reqnroll is an open-source .NET test automation tool to practice Behavior Driven Development (BDD).
+
+Reqnroll is a .NET port of Cucumber and it is based on the SpecFlow framework and code base.
