@@ -19,7 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Reqnroll.xUnit" Version="3.3.3-local" />
+    <PackageReference Include="Reqnroll.xUnit" Version="3.3.4-local" />
   </ItemGroup>
 
 </Project>
