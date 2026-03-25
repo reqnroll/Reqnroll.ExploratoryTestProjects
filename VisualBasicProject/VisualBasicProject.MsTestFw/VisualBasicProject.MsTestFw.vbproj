@@ -17,7 +17,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="4.0.2" />
     <PackageReference Include="MSTest.TestFramework" Version="4.0.2" />
-    <PackageReference Include="Reqnroll.MsTest" Version="3.3.4-local" />
+    <PackageReference Include="Reqnroll.MsTest" Version="3.3.4" />
   </ItemGroup>
 
 </Project>

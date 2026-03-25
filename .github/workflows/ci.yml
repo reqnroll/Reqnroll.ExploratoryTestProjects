@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-linux:
+    name: Build (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+
+      - name: Build BigReqnrollProject
+        run: dotnet build BigReqnrollProject/BigReqnrollProject.sln
+
+      - name: Build and test ReqnrollCalculator
+        run: dotnet test ReqnrollCalculator/ReqnrollCalculator.sln --verbosity minimal
+
+      - name: Build and test ParallelExecution
+        run: dotnet test ParallelExecution/ParallelExecution.sln --verbosity minimal
+
+      - name: Build and test ReqnrollFormatters
+        run: dotnet test ReqnrollFormatters/ReqnrollFormatters.sln --verbosity minimal
+
+      - name: Build and test ReqnrollPlugins
+        run: dotnet test ReqnrollPlugins/ReqnrollPlugins.sln --verbosity minimal
+
+      - name: Build and test VisualBasicProject
+        run: dotnet test VisualBasicProject/VisualBasicProject.sln --verbosity minimal
+
+      - name: Build and test TestFrameworkSamples
+        run: dotnet test TestFrameworkSamples/TestFrameworkSamples.slnx --verbosity minimal
+
+      - name: Build CustomPlugins plugin package
+        run: dotnet build CustomPlugins/CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin/CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin.csproj
+
+      - name: Build and test CustomPlugins
+        run: dotnet test CustomPlugins/CustomPlugins.TagDecoratorGeneratorPlugin.Test/CustomPlugins.TagDecoratorGeneratorPlugin.Test.csproj --verbosity minimal
+
+  build-windows:
+    name: Build (Windows)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+
+      - name: Build and test CleanReqnrollProject
+        run: dotnet test CleanReqnrollProject/CleanReqnrollProject.sln --verbosity minimal
+
+      - name: Build and test SpecFlowCompatibilityProject
+        run: dotnet test SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.slnx --verbosity minimal
+
+      - name: Build and test SpecFlowProject
+        run: dotnet test SpecFlowProject/SpecFlowProject.sln --verbosity minimal
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore OldProjectFileFormat
+        run: nuget restore OldProjectFileFormat/OldProjectFileFormat.sln
+
+      - name: Build OldProjectFileFormat
+        run: msbuild OldProjectFileFormat/OldProjectFileFormat.sln /p:Configuration=Debug /verbosity:minimal
