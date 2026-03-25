@@ -34,6 +34,12 @@ jobs:
       - name: Build and test ParallelExecution
         run: dotnet test ParallelExecution/ParallelExecution.sln --verbosity minimal
 
+      - name: Build CustomizedHtml template (npm)
+        working-directory: ReqnrollFormatters/ReqnrollFormatters.CustomizedHtml/CustomTemplate
+        run: |
+          npm install --no-fund --no-audit --legacy-peer-deps
+          npm run build
+
       - name: Build ReqnrollFormatters
         run: dotnet build ReqnrollFormatters/ReqnrollFormatters.sln --verbosity minimal
 
@@ -44,7 +50,14 @@ jobs:
         run: dotnet test VisualBasicProject/VisualBasicProject.sln --verbosity minimal
 
       - name: Build and test TestFrameworkSamples
-        run: dotnet test TestFrameworkSamples/TestFrameworkSamples.slnx --verbosity minimal
+        run: |
+          dotnet build TestFrameworkSamples/TestFrameworkSamples.slnx --verbosity minimal
+          dotnet test TestFrameworkSamples/MsTest4Project/MsTest4Project.csproj --no-build --verbosity minimal
+          dotnet test TestFrameworkSamples/MsTestProject/MsTestProject.csproj --no-build --verbosity minimal
+          dotnet test TestFrameworkSamples/NUnitProject/NUnitProject.csproj --no-build --verbosity minimal
+          dotnet test TestFrameworkSamples/XUnit3Project/XUnit3Project.csproj --no-build --verbosity minimal
+          dotnet test TestFrameworkSamples/XUnitProject/XUnitProject.csproj --no-build --verbosity minimal
+          dotnet run --project TestFrameworkSamples/TUnitProject/TUnitProject.csproj --no-build
 
       - name: Build CustomPlugins plugin package
         run: dotnet build CustomPlugins/CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin/CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin.csproj
@@ -66,8 +79,25 @@ jobs:
             9.0.x
             10.0.x
 
-      - name: Build and test CleanReqnrollProject
-        run: dotnet test CleanReqnrollProject/CleanReqnrollProject.sln --verbosity minimal
+      - name: Build CleanReqnrollProject
+        run: dotnet build CleanReqnrollProject/CleanReqnrollProject.sln --verbosity minimal
+
+      - name: Test CleanReqnrollProject
+        run: |
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net462/CleanReqnrollProject.Net462.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net472/CleanReqnrollProject.Net472.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net481/CleanReqnrollProject.Net481.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net481.x64/CleanReqnrollProject.Net481.x64.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net481.x86/CleanReqnrollProject.Net481.x86.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8/CleanReqnrollProject.Net8.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.MsTestFw/CleanReqnrollProject.Net8.MsTestFw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.NUnitFw/CleanReqnrollProject.Net8.NUnitFw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.XunitFw/CleanReqnrollProject.Net8.XunitFw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.Xunit3Fw/CleanReqnrollProject.Net8.Xunit3Fw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.MsTest4Fw/CleanReqnrollProject.Net8.MsTest4Fw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net9/CleanReqnrollProject.Net9.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net10/CleanReqnrollProject.Net10.csproj --no-build --verbosity minimal
+          dotnet run --project CleanReqnrollProject/CleanReqnrollProject.Net8.TUnitFw/CleanReqnrollProject.Net8.TUnitFw.csproj --no-build
 
       - name: Build and test SpecFlowCompatibilityProject
         run: dotnet test SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.slnx --verbosity minimal
