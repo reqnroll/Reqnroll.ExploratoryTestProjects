@@ -13,8 +13,8 @@ Scenario: Add two numbers
 
 Rule: Can multiply with zero
 
-Scenario: Multily with zero (wrong)
+Scenario: Multiply with zero
     Given the first number is 5
     And the second number is 0
     When the two numbers are multiplied
-    Then the result should be 1
+    Then the result should be 0

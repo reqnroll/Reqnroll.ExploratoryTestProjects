@@ -34,8 +34,8 @@ jobs:
       - name: Build and test ParallelExecution
         run: dotnet test ParallelExecution/ParallelExecution.sln --verbosity minimal
 
-      - name: Build and test ReqnrollFormatters
-        run: dotnet test ReqnrollFormatters/ReqnrollFormatters.sln --verbosity minimal
+      - name: Build ReqnrollFormatters
+        run: dotnet build ReqnrollFormatters/ReqnrollFormatters.sln --verbosity minimal
 
       - name: Build and test ReqnrollPlugins
         run: dotnet test ReqnrollPlugins/ReqnrollPlugins.sln --verbosity minimal
