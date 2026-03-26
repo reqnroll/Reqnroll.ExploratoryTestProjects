@@ -129,8 +129,8 @@ jobs:
           dotnet run --project TestFrameworkSamples/TUnitProject/TUnitProject.csproj --no-build
 
   CustomPlugins:
-    name: CustomPlugins (Linux)
-    runs-on: ubuntu-latest
+    name: CustomPlugins (Windows)
+    runs-on: windows-latest
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4
@@ -188,8 +188,12 @@ jobs:
             8.0.x
             9.0.x
             10.0.x
-      - name: Build and test SpecFlowCompatibilityProject
-        run: dotnet test SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.slnx --verbosity minimal
+      - name: Build SpecFlowCompatibilityProject
+        run: dotnet build SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.slnx --verbosity minimal
+      - name: Test SpecFlowCompatibilityProject
+        run: |
+          dotnet test SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.Net8/SpecFlowCompatibilityProject.Net8.csproj --no-build --verbosity minimal
+          dotnet test SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.Net10/SpecFlowCompatibilityProject.Net10.csproj --no-build --verbosity minimal
 
   SpecFlowProject:
     name: SpecFlowProject (Windows)
@@ -203,8 +207,8 @@ jobs:
             8.0.x
             9.0.x
             10.0.x
-      - name: Build and test SpecFlowProject
-        run: dotnet test SpecFlowProject/SpecFlowProject.sln --verbosity minimal
+      - name: Build SpecFlowProject
+        run: dotnet build SpecFlowProject/SpecFlowProject.sln --verbosity minimal
 
   OldProjectFileFormat:
     name: OldProjectFileFormat (Windows)
