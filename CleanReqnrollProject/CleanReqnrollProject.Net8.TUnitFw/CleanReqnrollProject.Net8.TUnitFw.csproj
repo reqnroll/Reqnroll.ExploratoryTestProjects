@@ -5,11 +5,12 @@
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reqnroll.TUnit" Version="3.3.4-local" />
-    <PackageReference Include="TUnit" Version="1.3.25" />
+    <PackageReference Include="Reqnroll.TUnit" Version="3.3.4" />
+    <PackageReference Include="TUnit" Version="1.12.65" />
   </ItemGroup>
 
   <ItemGroup>

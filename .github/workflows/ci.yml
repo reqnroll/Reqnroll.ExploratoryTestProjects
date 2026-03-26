@@ -1,0 +1,230 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  BigReqnrollProject:
+    name: BigReqnrollProject (Linux)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build BigReqnrollProject
+        run: dotnet build BigReqnrollProject/BigReqnrollProject.sln
+
+  ReqnrollCalculator:
+    name: ReqnrollCalculator (Linux)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build and test ReqnrollCalculator
+        run: dotnet test ReqnrollCalculator/ReqnrollCalculator.sln --verbosity minimal
+
+  ParallelExecution:
+    name: ParallelExecution (Linux)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build and test ParallelExecution
+        run: dotnet test ParallelExecution/ParallelExecution.sln --verbosity minimal
+
+  ReqnrollFormatters:
+    name: ReqnrollFormatters (Linux)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build CustomizedHtml template (npm)
+        working-directory: ReqnrollFormatters/ReqnrollFormatters.CustomizedHtml/CustomTemplate
+        run: |
+          npm install --no-fund --no-audit --legacy-peer-deps
+          npm run build
+      - name: Build ReqnrollFormatters
+        run: dotnet build ReqnrollFormatters/ReqnrollFormatters.sln --verbosity minimal
+
+  ReqnrollPlugins:
+    name: ReqnrollPlugins (Linux)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build and test ReqnrollPlugins
+        run: dotnet test ReqnrollPlugins/ReqnrollPlugins.sln --verbosity minimal
+
+  VisualBasicProject:
+    name: VisualBasicProject (Linux)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build and test VisualBasicProject
+        run: dotnet test VisualBasicProject/VisualBasicProject.sln --verbosity minimal
+
+  TestFrameworkSamples:
+    name: TestFrameworkSamples (Linux)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build and test TestFrameworkSamples
+        run: |
+          dotnet build TestFrameworkSamples/TestFrameworkSamples.slnx --verbosity minimal
+          dotnet test TestFrameworkSamples/MsTest4Project/MsTest4Project.csproj --no-build --verbosity minimal
+          dotnet test TestFrameworkSamples/MsTestProject/MsTestProject.csproj --no-build --verbosity minimal
+          dotnet test TestFrameworkSamples/NUnitProject/NUnitProject.csproj --no-build --verbosity minimal
+          dotnet test TestFrameworkSamples/XUnit3Project/XUnit3Project.csproj --no-build --verbosity minimal
+          dotnet test TestFrameworkSamples/XUnitProject/XUnitProject.csproj --no-build --verbosity minimal
+          dotnet run --project TestFrameworkSamples/TUnitProject/TUnitProject.csproj --no-build
+
+  CustomPlugins:
+    name: CustomPlugins (Windows)
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build CustomPlugins plugin package
+        run: dotnet build CustomPlugins/CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin/CustomPlugins.TagDecoratorGeneratorPlugin.ReqnrollPlugin.csproj
+      - name: Build and test CustomPlugins
+        run: dotnet test CustomPlugins/CustomPlugins.TagDecoratorGeneratorPlugin.Test/CustomPlugins.TagDecoratorGeneratorPlugin.Test.csproj --verbosity minimal
+
+  CleanReqnrollProject:
+    name: CleanReqnrollProject (Windows)
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build CleanReqnrollProject
+        run: dotnet build CleanReqnrollProject/CleanReqnrollProject.sln --verbosity minimal
+      - name: Test CleanReqnrollProject
+        run: |
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net462/CleanReqnrollProject.Net462.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net472/CleanReqnrollProject.Net472.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net481/CleanReqnrollProject.Net481.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net481.x64/CleanReqnrollProject.Net481.x64.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net481.x86/CleanReqnrollProject.Net481.x86.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8/CleanReqnrollProject.Net8.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.MsTestFw/CleanReqnrollProject.Net8.MsTestFw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.NUnitFw/CleanReqnrollProject.Net8.NUnitFw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.XunitFw/CleanReqnrollProject.Net8.XunitFw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.Xunit3Fw/CleanReqnrollProject.Net8.Xunit3Fw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net8.MsTest4Fw/CleanReqnrollProject.Net8.MsTest4Fw.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net9/CleanReqnrollProject.Net9.csproj --no-build --verbosity minimal
+          dotnet test CleanReqnrollProject/CleanReqnrollProject.Net10/CleanReqnrollProject.Net10.csproj --no-build --verbosity minimal
+          dotnet run --project CleanReqnrollProject/CleanReqnrollProject.Net8.TUnitFw/CleanReqnrollProject.Net8.TUnitFw.csproj --no-build
+
+  SpecFlowCompatibilityProject:
+    name: SpecFlowCompatibilityProject (Windows)
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build SpecFlowCompatibilityProject
+        run: dotnet build SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.slnx --verbosity minimal
+      - name: Test SpecFlowCompatibilityProject
+        run: |
+          dotnet test SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.Net8/SpecFlowCompatibilityProject.Net8.csproj --no-build --verbosity minimal
+          dotnet test SpecFlowCompatibilityProject/SpecFlowCompatibilityProject.Net10/SpecFlowCompatibilityProject.Net10.csproj --no-build --verbosity minimal
+
+  SpecFlowProject:
+    name: SpecFlowProject (Windows)
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Build SpecFlowProject
+        run: dotnet build SpecFlowProject/SpecFlowProject.sln --verbosity minimal
+
+  OldProjectFileFormat:
+    name: OldProjectFileFormat (Windows)
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+      - name: Restore OldProjectFileFormat
+        run: nuget restore OldProjectFileFormat/OldProjectFileFormat.sln
+      - name: Build OldProjectFileFormat
+        run: msbuild OldProjectFileFormat/OldProjectFileFormat.sln /p:Configuration=Debug /verbosity:minimal
