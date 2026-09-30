@@ -1,0 +1,17 @@
+using System;
+using Reqnroll;
+namespace DeveroomSample.StepDefinitions
+{
+    public static class AutomationStub
+    {
+        public static void DoStep(params object[] stepArgs)
+        {
+		   Console.WriteLine("executing step...");
+        }
+
+        public static void DoHook(params object[] stepArgs)
+        {
+		   Console.WriteLine("executing hook...");
+        }
+	}
+}
